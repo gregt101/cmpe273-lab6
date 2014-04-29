@@ -1,6 +1,11 @@
 package edu.sjsu.cmpe.cache.client;
+import com.google.common.hash.Hashing;
+import java.util.List;
+import java.util.ArrayList;
 
 public class Client {
+    
+    private List<CacheServiceInterface> cache;
 
     public static void main(String[] args) throws Exception {
         System.out.println("Starting Cache Client...");
@@ -10,9 +15,27 @@ public class Client {
                 "http://localhost:3001");
         CacheServiceInterface cache_n3 = new DistributedCacheService(
                 "http://localhost:3003");
+        byte key = 0;
+        char value = 'a';
+        int node;
+        
+        cache = new ArrayList<CacheServiceInterface>();
+        cache.add(cache_n1);
+        cache.add(cache_n2);
+        cache.add(cache_n3);
+        
+        while ((key<10)&&(cache.size()>0)){
+            key++;
+            node = Hashing.consistentHash(Hashing.md5().hashString(Byte.toString(key)), cache.size());
+            //cache.put(1, "foo");
+            cache.get(node).put(key, Character.toString(value));
+            
+            //System.out.println("put(1 => foo)");
+            System.out.println("put("+key +"=>"+ value+")");
+        }
 
-        cache.put(1, "foo");
-        System.out.println("put(1 => foo)");
+        
+        
 
         String value = cache.get(1);
         System.out.println("get(1) => " + value);
