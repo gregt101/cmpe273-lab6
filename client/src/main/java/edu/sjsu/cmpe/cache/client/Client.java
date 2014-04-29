@@ -32,13 +32,12 @@ public class Client {
             
             //System.out.println("put(1 => foo)");
             System.out.println("put("+key +"=>"+ value+")");
+            
+            //String value = cache.get(1);
+            //System.out.println("get(1) => " + value);
+            System.out.println("get("+key +") =>"+ cache.get(node).get(key));
         }
 
-        
-        
-
-        String value = cache.get(1);
-        System.out.println("get(1) => " + value);
 
         System.out.println("Existing Cache Client...");
     }
