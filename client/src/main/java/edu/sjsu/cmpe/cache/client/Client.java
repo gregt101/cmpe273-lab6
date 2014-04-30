@@ -34,11 +34,18 @@ public class Client {
             //System.out.println("put(1 => foo)");
             System.out.println("put("+key +"=>"+ value+")");
             
+            
+        }
+        
+        k = 0;
+        while ((key<10)&&(cache.size()>0)){
+            key++;
+            node = Hashing.consistentHash(Hashing.md5().hashString(Byte.toString(key)), cache.size());
             //String value = cache.get(1);
             //System.out.println("get(1) => " + value);
             System.out.println("get("+key +") =>"+ cache.get(node).get(key));
+            
         }
-
 
         System.out.println("Existing Cache Client...");
     }
