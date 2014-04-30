@@ -10,11 +10,12 @@ public class Client {
     public static void main(String[] args) throws Exception {
         System.out.println("Starting Cache Client...");
         CacheServiceInterface cache_n1 = new DistributedCacheService(
-                "http://54.193.57.101:3000");
+                //"http://54.193.57.101:3000");
+                "http://localhost:3000");
         CacheServiceInterface cache_n2 = new DistributedCacheService(
-                "http://54.193.57.101:3001");
+                "http://localhost:3001");
         CacheServiceInterface cache_n3 = new DistributedCacheService(
-                "http://54.193.57.101:3002");
+                "http://localhost:3002");
         int key = 0;
         char value = 'a';
         int node;
