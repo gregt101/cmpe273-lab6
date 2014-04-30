@@ -36,7 +36,7 @@ public class Client {
             
             //String value = cache.get(1);
             //System.out.println("get(1) => " + value);
-            System.out.println("get("+key +") =>"+ cache.get(node).get(key));
+            //System.out.println("get("+key +") =>"+ cache.get(node).get(key));
         }
 
 
