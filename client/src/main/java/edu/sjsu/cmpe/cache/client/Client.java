@@ -34,7 +34,7 @@ public class Client {
             //System.out.println("put(1 => foo)");
             System.out.println("put("+key +"=>"+ value+")");
             
-            
+            value++;
         }
         
         key = 0;
