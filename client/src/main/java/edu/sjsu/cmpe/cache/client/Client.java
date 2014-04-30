@@ -37,7 +37,7 @@ public class Client {
             
         }
         
-        k = 0;
+        key = 0;
         while ((key<10)&&(cache.size()>0)){
             key++;
             node = Hashing.consistentHash(Hashing.md5().hashString(Byte.toString(key)), cache.size());
