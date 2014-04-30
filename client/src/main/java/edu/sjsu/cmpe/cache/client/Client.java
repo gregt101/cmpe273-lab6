@@ -5,7 +5,7 @@ import java.util.ArrayList;
 
 public class Client {
     
-    private List<CacheServiceInterface> cache;
+    //private List<CacheServiceInterface> cache;
 
     public static void main(String[] args) throws Exception {
         System.out.println("Starting Cache Client...");
@@ -19,7 +19,7 @@ public class Client {
         char value = 'a';
         int node;
         
-        cache = new ArrayList<CacheServiceInterface>();
+        List<CacheServiceInterface> cache = new ArrayList<CacheServiceInterface>();
         cache.add(cache_n1);
         cache.add(cache_n2);
         cache.add(cache_n3);
