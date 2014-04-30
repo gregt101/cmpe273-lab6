@@ -16,7 +16,7 @@ public class Client {
                 "http://localhost:3001");
         CacheServiceInterface cache_n3 = new DistributedCacheService(
                 "http://localhost:3002");
-        int key = 0;
+        byte key = 0;
         char value = 'a';
         int node;
         
@@ -27,7 +27,7 @@ public class Client {
         
         while ((key<10)&&(cache.size()>0)){
             key++;
-            node = Hashing.consistentHash(Hashing.md5().hashString(Integer.toString(key)), cache.size());
+            node = Hashing.consistentHash(Hashing.md5().hashString(Byte.toString(key)), cache.size());
             //cache.put(1, "foo");
             cache.get(node).put(key, Character.toString(value));
             
