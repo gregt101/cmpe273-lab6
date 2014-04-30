@@ -14,7 +14,7 @@ public class Client {
         CacheServiceInterface cache_n2 = new DistributedCacheService(
                 "http://localhost:3001");
         CacheServiceInterface cache_n3 = new DistributedCacheService(
-                "http://localhost:3003");
+                "http://localhost:3002");
         int key = 0;
         char value = 'a';
         int node;
